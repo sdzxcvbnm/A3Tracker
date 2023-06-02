@@ -1,2 +1,38 @@
 
 
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid grey;
+    padding: 2em 1em;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em;
+}
+
+.form-row > label {
+    width: 100px;
+}
+
+.form-row > input,
+.form-row > select {
+    padding: 0.5em;
+    flex-grow: 1;
+}
