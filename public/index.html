@@ -13,60 +13,99 @@
     </head>
     <body>
         <header>
-            <h1>Hello</h1>
+            <h1>Hello :(</h1>
         </header>
-        <form id="taskform">
+
+        <main> 
+            <section> 
+
+        <form id="cakeform">
             <div class="form-row">
-                <label for="taskName">Name</label>
+                <label for="cakeName">Name</label>
                 <input
                     type="text"
-                    name="taskName"
-                    id="taskName"
+                    name="cakeName"
+                    id="cakeName"
                     required="true"
                 >
             </div>
             <div class="form-row">
-                <label for="taskType">Type</label>
-                <select id="taskType" name="taskType" required="true">
+                <label for="cakeType">Type</label>
+                <select id="cakeType" name="cakeType" required="true">
                     <option value="">Select one</option>
-                    <option value="Concept Ideation">Concept Ideation</option>
-                    <option value="Wireframing">Wireframing</option>
-                    <option value="Application Coding">Application Coding</option>
+                    <option value="Sponge Cake">Sponge Cake</option>
+                    <option value="Pound Cake">Pound Cake</option>
+                    <option value="Angel Cake">Angel Cake</option>
+                    <option value="Chiffon Cake">Chiffon Cake</option>
+                    <option value="Genoise Cake">Genoise Cake</option>
+                    <option value="Swiss Roll">Swiss Roll</option>
+                    <option value="Cupcake">Cupcake</option>
+                    <option value="Cheesecake">Cheesecake</option>
+                    <option value="Carrot cake">Carrot Cake</option>
+                    <option value="Short Cake">Short Cake</option>
+                    <option value="Bundt Cake">Bindy Cake</option>
+                    <option value="Crepe Cake">Crepe Cake</option>
+                    <option value="Ice-cream Cake">Ice-cream Cake</option>
+                    <option value="Icebox Cake">Icebox Cake</option>
                 </select>
             </div>
+
             <div class="form-row">
-                <label for="taskRate">Rate</label>
-                <input
-                    type="number"
-                    name="taskRate"
-                    id="taskRate"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskTime">Time</label>
-                <input
-                    type="number"
-                    name="taskTime"
-                    id="taskTime"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskClient">Client</label>
+                <label for="cakeFlavour">Flavour</label>
                 <input
                     type="text"
-                    name="taskClient"
-                    id="taskClient"
+                    name="cakeFlavour"
+                    id="cakeFlavour"
+                    required="true"
+                >
+            </div>
+                
+
+            <div class="form-row">
+                <label for="cakeRate">Rate</label>
+                <input
+                    type="number"
+                    name="cakeRate"
+                    id="cakeRate"
+                    required="true"
+                >
+            </div> 
+
+
+            <div class="form-row">
+                <label for="cakeBakery">Bakery</label>
+                <input
+                    type="text"
+                    name="cakeBakery"
+                    id="cakeBakery"
                     required="true"
                 >
             </div>
             <div class="form-row">
-                <input type="submit">
+                <label for="cakeComment">Comment</label>
+                <input
+                    type="text"
+                    name="cakeComment"
+                    id="cakeComment"
+                    required="true"
+                >
             </div>
+            <!-- <div class="form-row">
+                <input type="submit">
+            </div> -->
+
+            <button id="addCake">Add Cake!</button>
         </form>
-        <h2>Tasks</h2>
-        <ul id="tasklist"></ul>
+        </section>
+
+
+        <aside>
+         <h2>Entries</h2>
+         <ul id="entrylist"></ul>
+        </aside>
+        
+    </main>
+
         <script src="script.js"></script>
     </body>
 </html>

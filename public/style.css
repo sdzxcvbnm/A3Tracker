@@ -1,5 +1,5 @@
 
-
+/* 
 h1{
     font-family: 'Poppins', sans-serif;
 }
@@ -18,7 +18,7 @@ form {
     max-width: 500px;
     margin: 0 auto;
     border: 2px solid grey;
-    padding: 2em 1em;
+    padding: 1em;
 }
 
 .form-row {
@@ -36,3 +36,128 @@ form {
     padding: 0.5em;
     flex-grow: 1;
 }
+
+aside {
+    grid-area: entrylist;
+    padding: 1em;
+    overflow-y: scroll;
+  }
+  */ 
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  header {
+    height: 70px;
+    padding: 1em 0;
+  }
+  
+  header > h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  main {
+    height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "cakeform entrylist";
+  }
+  
+  main section {
+    grid-area: cakeform;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  form {
+    margin: 0 auto;
+    border: 2px solid grey;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+
+  
+  .form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  
+  .form-row > label {
+    width: 100px;
+  }
+  
+  .form-row > input,
+  .form-row > select {
+    padding: .5em;
+    flex-grow: 1;
+  }
+  
+  aside {
+    grid-area: entrylist;
+    padding: 1em;
+    overflow-y: scroll;
+  }
+  
+  
+  #entrylist {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-block-start: 0;
+    padding: 0;
+  }
+  
+  #entrylist li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 1px solid gray;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+  }
+  
+  #entrylist li p {
+    flex-grow: 1;
+    margin-left: 10px;
+    max-width: 200px;
+  }
+  #entrylist li span {
+    text-align: right;
+    flex-grow: 1;
+    margin-right: 10px;
+    max-width: 200px;
+  }
+  
+  
+  #entrylist li button {
+    font-size: 20px;
+    padding: 4px;
+    
+  }
+  
+
+ 
