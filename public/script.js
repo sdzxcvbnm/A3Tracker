@@ -125,18 +125,16 @@ function save(name, type, flavour, rate, bakery, comment) {
 };
 
 function deleteCake (cakeId) {
-    const savedCakes = JSON.parse(localStorage.getItem(localStorageKey));
-    console.log(savedCakes, 'savedCakes')
     var i = savedCakes.length;
+    const savedCakes = JSON.parse(localStorage.getItem(localStorageKey));
+
     while(i--) {
-        console.log(savedCakes[i].id, 'savedCakeId');
-        console.log(cakeId, 'cakeId');
-        if(savedCakes[i].id === cakeId) {
-            savedCakes[i].splice(i, 1);
+        if(savedCakes[i].id.toString() === cakeId) {
+            savedCakes.splice(i, 1);
             break;
         }
     }
-    console.log(savedCakes, 'after Deletion')
+
     localStorage.setItem(localStorageKey, JSON.stringify(savedCakes));
 } 
 
