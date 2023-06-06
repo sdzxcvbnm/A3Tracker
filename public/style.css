@@ -63,7 +63,7 @@ aside {
     padding: 1em 0;
     background-image: linear-gradient(120deg, #FFB4B4 0%, #FAEBE3 100%);
     color: #433020;
-    box-shadow: 8px 8px 12px #bababa;
+    box-shadow: 5px 5px 12px #bababa;
 
   }
   
@@ -79,18 +79,26 @@ aside {
     font-family: 'Poppins', sans-serif;
     color: #433020;
   }
+
+  h3 {
+    color: #F2B989;
+    font-size: 15px;
+    text-align: right;
+  }
   
   main {
     height: calc(100vh - 70px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-grow: 1;
+   /* grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "cakeform entrylist";
+    grid-template-areas: "cakeform entrylist"; */
   }
   
   main section {
-    grid-area: cakeform;
+   /*  grid-area: cakeform; */
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -102,7 +110,7 @@ aside {
     border-radius: 10px;
     color: #433020;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 8px 8px 8px #bababa;
+    box-shadow: 5px 5px 8px #bababa;
   }
 
   .form-row {
@@ -148,89 +156,99 @@ option:disabled {
   color: #F2B989;
 }
 
-  aside {
-    grid-area: entrylist;
-    padding: 1em;
-    overflow-y: scroll;
-    border-radius: 20px;
-    margin: 30px;
-    background-image: linear-gradient(120deg, #f9f1e4 0%, #f7b0b0 100%);
-    box-shadow: 8px 8px 8px #bababa;
-  }
-  
-  #entrylist {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin-block-start: 0;
-    padding: 0;
-  }
-  
-  #entrylist li {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 10px;
-    background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
-  }
-  
-  #entrylist li p {
-    flex-grow: 1;
-    margin-left: 10px;
-    max-width: 200px;
-  }
-  #entrylist li span {
-    text-align: right;
-    flex-grow: 1;
-    margin-right: 10px;
-    max-width: 200px;
-  }
-  
-  
-  #entrylist li button {
-    font-size: 15px;
-    padding: 1em 1em 1em 1em;
-    background: #433020;
-    border: #433020;
-    color: #F8F8F8;
-    border-radius: 30px;
-  }
-  
-  .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.4rem;
-    width: 900px;
-    padding: 1.3rem;
-    min-height: 500px;
-    position: absolute;
-    top: 15%;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    z-index: 2;
-    box-shadow: 8px 8px 12px #5c4e44;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    z-index: 1;
-  }
- 
+aside {
+  /* grid-area: entrylist; */
+  display: flex;
+  flex-grow: 1;
+  padding: 1em;
+  overflow-y: scroll;
+  border-radius: 20px;
+  margin: 30px;
+  background-image: linear-gradient(120deg, #f9f1e4 0%, #f7b0b0 100%);
+  box-shadow: 5px 5px 8px #bababa;
+  flex-direction: column;
+}
+
+#entrylist {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-block-start: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+#entrylist li {
+  width: 100rem;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+}
+
+#entrylist li p {
+  flex-grow: 1;
+  margin-left: 10px;
+  max-width: 200px;
+}
+#entrylist li span {
+  text-align: right;
+  flex-grow: 1;
+  margin-right: 10px;
+  max-width: 200px;
+}
+
+
+#entrylist li button {
+  font-size: 15px;
+  padding: 1em 1em 1em 1em;
+  background: #433020;
+  border: #433020;
+  color: #F8F8F8;
+  border-radius: 30px;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 900px;
+  padding: 1.3rem;
+  min-height: 500px;
+  position: absolute;
+  top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  z-index: 2;
+  box-shadow: 8px 8px 12px #5c4e44;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.delButtonContainter {
+  position: absolute;
+  left: 140px;
+  top: 945px;
+}

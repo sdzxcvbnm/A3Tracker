@@ -47,37 +47,9 @@ function displayCake(cake) {
     let item = document.createElement("li");
     item.setAttribute("data-id", cake.id);
     item.innerHTML = `<p><strong>${cake.name}</strong><br>${cake.type}<br>${cake.flavour}<br>${cake.rate}<br>${cake.date}</p>`;
-
+    
     entrylist.appendChild(item);
-
-    item.addEventListener("click", (evt) => {
-       // alert(`you've clicked ${cake.name}`);
-        const overlay = document.createElement("div");
-       
-        // overlay.addEventListener("click", (evt) => {
-        //     // evt.preventDefault();
-        //     // evt.target.remove(evt.target);
-        //     overlay.parentNode.removeChild(overlay);
-        // });
-        overlay.classList.add("overlay");
-
-        const modal = document.createElement("model");
-        modal.classList.add('modal');
-        modal.innerHTML = `<h2>${cake.name}</h2><br><p><em>ID: ${cake.id}<br>Date: ${cake.date}</em> <br> <br>Type: ${cake.type}<br>Flavour: ${cake.flavour}<br>Bakery: ${cake.bakery}<br>Rating: ${cake.rate}<br>Comment: ${cake.comment}</p>`;
-        
-        
-        overlay.appendChild(modal);
-        item.appendChild(overlay);
-        // const overlay = document.querySelector(".overlay");
-        overlay.onclick = function (e) { e.preventDefault(); e.stopPropagation(); this.parentElement.removeChild(this)};
-        console.log(overlay.parentNode);
-        console.log(overlay.parentElement, 'element')
-    })
-
-
-    // Clear the value of the input once the task has been added to the page
-    form.reset();
-
+    
     // Setup delete button DOM elements
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete");
@@ -93,7 +65,7 @@ function displayCake(cake) {
                 entryList.splice(cakeArrayIndex, 1)
             }
         })
-
+        
         // Make sure the deletion worked by logging out the whole array
         console.log(entryList)
 
@@ -101,6 +73,62 @@ function displayCake(cake) {
         // Because we used 'let' to define the item, this will always delete the right element
 
     })
+
+    item.addEventListener("click", (evt) => {
+       // alert(`you've clicked ${cake.name}`);
+        const overlay = document.createElement("div");
+       
+        // overlay.addEventListener("click", (evt) => {
+        //     // evt.preventDefault();
+        //     // evt.target.remove(evt.target);
+        //     overlay.parentNode.removeChild(overlay);
+        // });
+        overlay.classList.add("overlay");
+
+        const modal = document.createElement("model");
+        modal.classList.add('modal');
+        modal.innerHTML = `
+            <h2>
+                ${cake.name}
+            </h2>
+            <br>
+            <h3>
+                <em>ID: ${cake.id}
+                <br>
+                <b>Date:</b> ${cake.date}</em> 
+            </h3> 
+            <p>
+                <br><br>
+                <b>Type:</b>    ${cake.type}<br>
+                <b>Flavour:</b> ${cake.flavour}<br>
+                <b>Bakery:</b>  ${cake.bakery}<br>
+                <b>Rating:</b>  ${cake.rate}<br>
+                <b>Comment:</b> ${cake.comment}
+            </p>`;
+        
+        
+        overlay.appendChild(modal);
+        const delButtonContainter = document.createElement("div");
+        delButtonContainter.classList.add('delButtonContainer');
+        delButtonContainter.appendChild(delButton);
+
+        modal.appendChild(delButtonContainter);
+
+        item.appendChild(overlay);
+        // const overlay = document.querySelector(".overlay");
+        overlay.onclick = function (e) { e.preventDefault(); e.stopPropagation(); this.parentElement.removeChild(this)};
+        console.log(overlay.parentNode);
+        console.log(overlay.parentElement, 'element')
+
+
+
+    })
+
+
+    // Clear the value of the input once the task has been added to the page
+    form.reset();
+
+    
 }
 
 function save(name, type, flavour, rate, bakery, comment) {
