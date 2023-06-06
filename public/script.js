@@ -2,10 +2,34 @@
 const form = document.getElementById("cakeform");
 const cakelist = document.getElementById("cakelist");
 
+
+const localStorageKey = 'DECO2017.SDAN5477.Cakes'
+let entryList = [];
+const saved = localStorage.getItem(localStorageKey);
+const parsedSaved = JSON.parse(saved);
+console.log(entryList);
+if(parsedSaved) {
+    entryList = parsedSaved;
+    
+    for(const cake in parsedSaved) {
+        displayCake(parsedSaved[cake]);   
+    }
+}
+
+
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     console.log(form.elements.cakeType.value)
+
+    save(
+        form.elements.cakeName.value,
+        form.elements.cakeType.value,
+        form.elements.cakeFlavour.value,  
+        form.elements.cakeRate.value,
+        form.elements.cakeBakery.value,
+        form.elements.cakeComment.value,
+    );
 
     addCake(
         form.elements.cakeName.value,
@@ -14,7 +38,8 @@ form.addEventListener("submit", function (event) {
         form.elements.cakeRate.value,
         form.elements.cakeBakery.value,
         form.elements.cakeComment.value,
-    )
+    );
+
     console.log(entryList)
 })
 
@@ -53,17 +78,31 @@ function displayCake(cake) {
     })
 }
 
+function save(name, type, flavour, rate, bakery, comment) {
+    const cake = {
+        name,
+        type,
+        id: Date.now(),
+        date: new Date().toISOString(),
+        flavour,        
+        rate,
+        bakery,
+        comment
+    }
 
+    const savedCakes = JSON.parse(localStorage.getItem(localStorageKey));
 
-var entryList = [];
+    let newCakesToSave;
 
+    savedCakes ? (newCakesToSave = [cake, ...savedCakes]) : (newCakesToSave = [cake]);
 
+    localStorage.setItem(localStorageKey, JSON.stringify(newCakesToSave));
+}
 
 function addCake(name, type, flavour, rate, bakery, comment) {
-
     // Creating the object with the usual property:value syntax
     // Creating the object, directly passing in the input parameters
-    let cake = {
+    const cake = {
         name,
         type,
         id: Date.now(),
@@ -76,11 +115,12 @@ function addCake(name, type, flavour, rate, bakery, comment) {
 
     entryList.push(cake);
     displayCake(cake);
-
 }
 
 // Call the function with test values for the input paramaters
-addCake("Cake", "Sponge Cake", "Red Velvet", 5, "thumbs up");
+// addCake("Cake", "Sponge Cake", "Red Velvet", 5, "thumbs up");
 
 // Log the array to the console.
 console.log(entryList);
+
+
