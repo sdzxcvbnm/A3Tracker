@@ -125,10 +125,11 @@ function save(name, type, flavour, rate, bakery, comment) {
 };
 
 function deleteCake (cakeId) {
-    var i = savedCakes.length;
     const savedCakes = JSON.parse(localStorage.getItem(localStorageKey));
 
+    var i = savedCakes.length;
     while(i--) {
+
         if(savedCakes[i].id.toString() === cakeId) {
             savedCakes.splice(i, 1);
             break;
