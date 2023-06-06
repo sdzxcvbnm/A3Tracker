@@ -110,7 +110,7 @@ function displayCake(cake) {
         overlay.appendChild(modal);
         const delButtonContainter = document.createElement("div");
         delButtonContainter.classList.add('delButtonContainer');
-        delButtonContainter.appendChild(delButton);
+        delButtonContainter.appendChild(delButton.cloneNode(true));
 
         modal.appendChild(delButtonContainter);
 
