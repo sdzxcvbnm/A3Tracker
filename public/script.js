@@ -16,7 +16,6 @@ if(parsedSaved) {
     }
 }
 
-
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -46,16 +45,33 @@ form.addEventListener("submit", function (event) {
 function displayCake(cake) {
     let item = document.createElement("li");
     item.setAttribute("data-id", cake.id);
-    item.innerHTML = `<p><strong>${cake.name}</strong><br>${cake.type}<br>${cake.flavour}<br>${cake.rate}<br>${cake.date}</p>`;
-    
+    item.innerHTML = `
+    <h2>
+        ${cake.name}
+    </h2>
+    <br>
+    <p>
+        <br><br>
+        <b>Type:</b>    ${cake.type}<br>
+        <b>Flavour:</b> ${cake.flavour}<br>
+        <b>Bakery:</b>  ${cake.bakery}<br>
+        <b>Rating:</b>  ${cake.rate}<br>
+        <b>Comment:</b> ${cake.comment}
+    </p>`;
+
     entrylist.appendChild(item);
+
+    const btnContainer = document.createElement("div");
+
     
     // Setup delete button DOM elements
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete");
     delButton.appendChild(delButtonText);
     delButton.onclick = function (event) {event.preventDefault(); event.stopPropagation(); deleteCake(this.parentElement.getAttribute('data-id')) }
-    item.appendChild(delButton); // Adds a delete button to every task
+    // item.appendChild(delButton); // Adds a delete button to every task
+    btnContainer.appendChild(delButton);
+    item.appendChild(btnContainer);
 
     // Listen for when the delete button is clicked
     delButton.addEventListener("click", function (event) {
@@ -119,16 +135,10 @@ function displayCake(cake) {
         overlay.onclick = function (e) { e.preventDefault(); e.stopPropagation(); this.parentElement.removeChild(this)};
         console.log(overlay.parentNode);
         console.log(overlay.parentElement, 'element')
-
-
-
     })
-
 
     // Clear the value of the input once the task has been added to the page
     form.reset();
-
-    
 }
 
 function save(name, type, flavour, rate, bakery, comment) {
@@ -190,5 +200,3 @@ function addCake(name, type, flavour, rate, bakery, comment) {
 
 // Log the array to the console.
 console.log(entryList);
-
-
