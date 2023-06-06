@@ -101,7 +101,7 @@ function displayCake(cake) {
 
     // Listen for when the delete button is clicked
     delButton.addEventListener("click", function (event) {
-
+        event.stopPropagation();
         entryList.forEach(function (cakeArrayElement, cakeArrayIndex) {
             if (cakeArrayElement.id == item.getAttribute('data-id')) {
                 entryList.splice(cakeArrayIndex, 1)
@@ -149,12 +149,30 @@ function displayCake(cake) {
             </p>`;
         
         
-        overlay.appendChild(modal);
         const delButtonContainter = document.createElement("div");
+        const copiedDelButton = delButton.cloneNode(true);
+
+        copiedDelButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            entryList.forEach(function (cakeArrayElement, cakeArrayIndex) {
+                if (cakeArrayElement.id == item.getAttribute('data-id')) {
+                    entryList.splice(cakeArrayIndex, 1)
+                }
+            })
+            
+            // Make sure the deletion worked by logging out the whole array
+            console.log(entryList)
+            deleteCake(item.getAttribute('data-id'));
+            item.remove(); // Remove the task item from the page when button clicked
+            // Because we used 'let' to define the item, this will always delete the right element
+    
+        })
+
         delButtonContainter.classList.add('delButtonContainer');
-        delButtonContainter.appendChild(delButton.cloneNode(true));
+        delButtonContainter.appendChild(copiedDelButton);
 
         modal.appendChild(delButtonContainter);
+        overlay.appendChild(modal);
 
         item.appendChild(overlay);
         // const overlay = document.querySelector(".overlay");

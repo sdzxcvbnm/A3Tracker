@@ -273,6 +273,7 @@ aside {
 
 .rating {
   display: inline-block;
+  margin-left: 55px;
 }
 
 .rating * {
@@ -284,9 +285,13 @@ aside {
 }
 
 .rating input:checked ~ label{
-  color: yellow;
+  color: #f6ce7f;
 }
 
 .rating label{
-  font-size: 30px;
+  font-size: 25px;
 }
+
+
+
+
