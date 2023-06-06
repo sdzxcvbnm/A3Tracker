@@ -43,13 +43,37 @@ form.addEventListener("submit", function (event) {
     console.log(entryList)
 })
 
-
 function displayCake(cake) {
     let item = document.createElement("li");
     item.setAttribute("data-id", cake.id);
     item.innerHTML = `<p><strong>${cake.name}</strong><br>${cake.type}<br>${cake.flavour}<br>${cake.rate}<br>${cake.date}</p>`;
 
     entrylist.appendChild(item);
+
+    item.addEventListener("click", (evt) => {
+       // alert(`you've clicked ${cake.name}`);
+        const overlay = document.createElement("div");
+       
+        // overlay.addEventListener("click", (evt) => {
+        //     // evt.preventDefault();
+        //     // evt.target.remove(evt.target);
+        //     overlay.parentNode.removeChild(overlay);
+        // });
+        overlay.classList.add("overlay");
+
+        const modal = document.createElement("model");
+        modal.classList.add('modal');
+        modal.innerHTML = `<h2>${cake.name}</h2><br><p><em>ID: ${cake.id}<br>Date: ${cake.date}</em> <br> <br>Type: ${cake.type}<br>Flavour: ${cake.flavour}<br>Bakery: ${cake.bakery}<br>Rating: ${cake.rate}<br>Comment: ${cake.comment}</p>`;
+        
+        
+        overlay.appendChild(modal);
+        item.appendChild(overlay);
+        // const overlay = document.querySelector(".overlay");
+        overlay.onclick = function (e) { e.preventDefault(); e.stopPropagation(); this.parentElement.removeChild(this)};
+        console.log(overlay.parentNode);
+        console.log(overlay.parentElement, 'element')
+    })
+
 
     // Clear the value of the input once the task has been added to the page
     form.reset();
@@ -58,6 +82,7 @@ function displayCake(cake) {
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete");
     delButton.appendChild(delButtonText);
+    delButton.onclick = function (event) {event.preventDefault(); event.stopPropagation(); deleteCake(this.parentElement.getAttribute('data-id')) }
     item.appendChild(delButton); // Adds a delete button to every task
 
     // Listen for when the delete button is clicked
@@ -83,7 +108,7 @@ function save(name, type, flavour, rate, bakery, comment) {
         name,
         type,
         id: Date.now(),
-        date: new Date().toISOString(),
+        date: new Date().toISOString().slice(0, 10),
         flavour,        
         rate,
         bakery,
@@ -97,7 +122,23 @@ function save(name, type, flavour, rate, bakery, comment) {
     savedCakes ? (newCakesToSave = [cake, ...savedCakes]) : (newCakesToSave = [cake]);
 
     localStorage.setItem(localStorageKey, JSON.stringify(newCakesToSave));
-}
+};
+
+function deleteCake (cakeId) {
+    const savedCakes = JSON.parse(localStorage.getItem(localStorageKey));
+    console.log(savedCakes, 'savedCakes')
+    var i = savedCakes.length;
+    while(i--) {
+        console.log(savedCakes[i].id, 'savedCakeId');
+        console.log(cakeId, 'cakeId');
+        if(savedCakes[i].id === cakeId) {
+            savedCakes[i].splice(i, 1);
+            break;
+        }
+    }
+    console.log(savedCakes, 'after Deletion')
+    localStorage.setItem(localStorageKey, JSON.stringify(savedCakes));
+} 
 
 function addCake(name, type, flavour, rate, bakery, comment) {
     // Creating the object with the usual property:value syntax
