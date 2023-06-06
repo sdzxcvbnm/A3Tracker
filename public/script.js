@@ -2,6 +2,30 @@
 const form = document.getElementById("cakeform");
 const cakelist = document.getElementById("cakelist");
 
+const rating1 = document.getElementById("rating1");
+const rating2 = document.getElementById("rating2");
+const rating3 = document.getElementById("rating3");
+const rating4 = document.getElementById("rating4");
+const rating5 = document.getElementById("rating5");
+var ratingValue = 0;
+
+const ratingContainer = document.getElementById("ratings");
+
+rating1.addEventListener("click", (evt) => {
+    ratingValue = 5;
+});
+rating2.addEventListener("click", (evt) => {
+    ratingValue = 4;
+});
+rating3.addEventListener("click", (evt) => {
+    ratingValue = 3;
+});
+rating4.addEventListener("click", (evt) => {
+    ratingValue = 2;
+});
+rating5.addEventListener("click", (evt) => {
+    ratingValue = 1;
+});
 
 const localStorageKey = 'DECO2017.SDAN5477.Cakes'
 let entryList = [];
@@ -25,7 +49,8 @@ form.addEventListener("submit", function (event) {
         form.elements.cakeName.value,
         form.elements.cakeType.value,
         form.elements.cakeFlavour.value,  
-        form.elements.cakeRate.value,
+        // form.elements.cakeRate.value,
+        ratingValue,
         form.elements.cakeBakery.value,
         form.elements.cakeComment.value,
     );
@@ -34,11 +59,13 @@ form.addEventListener("submit", function (event) {
         form.elements.cakeName.value,
         form.elements.cakeType.value,
         form.elements.cakeFlavour.value,  
-        form.elements.cakeRate.value,
+        // form.elements.cakeRate.value,
+        ratingValue,
         form.elements.cakeBakery.value,
         form.elements.cakeComment.value,
     );
-
+    console.log(ratingValue, 'ratingValue');
+    ratingValue = 0;
     console.log(entryList)
 })
 
@@ -62,16 +89,15 @@ function displayCake(cake) {
     entrylist.appendChild(item);
 
     const btnContainer = document.createElement("div");
-
     
     // Setup delete button DOM elements
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete");
     delButton.appendChild(delButtonText);
-    delButton.onclick = function (event) {event.preventDefault(); event.stopPropagation(); deleteCake(this.parentElement.getAttribute('data-id')) }
+    // delButton.onclick = function (event) {event.preventDefault(); event.stopPropagation(); deleteCake(this.parentElement.getAttribute('data-id')) }
     // item.appendChild(delButton); // Adds a delete button to every task
-    btnContainer.appendChild(delButton);
-    item.appendChild(btnContainer);
+    // btnContainer.appendChild(delButton);
+    item.appendChild(delButton);
 
     // Listen for when the delete button is clicked
     delButton.addEventListener("click", function (event) {
@@ -84,7 +110,7 @@ function displayCake(cake) {
         
         // Make sure the deletion worked by logging out the whole array
         console.log(entryList)
-
+        deleteCake(item.getAttribute('data-id'));
         item.remove(); // Remove the task item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
 
@@ -200,3 +226,6 @@ function addCake(name, type, flavour, rate, bakery, comment) {
 
 // Log the array to the console.
 console.log(entryList);
+
+console.log(ratingContainer);
+
