@@ -72,7 +72,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Creating a modal: a dialog box/popup window that is displayed. The model is set in Javascript and CSS is used to design the modal. The information that is shown in the modal comes from cake elements that are saved.
 
 InnerHTML is used to set the html of the modal.
-<em> <h2> <p> are used to differenciate the display of the texts.
 
 ```Javascript
  const modal = document.createElement("model");
@@ -183,4 +182,4 @@ https://stackoverflow.com/questions/38238398/display-stars-instead-of-radio-butt
 3. The main screen stating that there are no entries, when it is the user's first time on the site, and they have yet to add any entry.
 
 4. Having a clear design is helpful. I'd recommend having the design of the page created through sites like; Figma.com, and the data model of the site is completed. Get feedback from friends, family, tutors, and the feedback from the previous assignment to make positive adjustments to the design, and if any user inputs should be changed. 
-5. Creating the HTML, and CSS first. So that everything that should be on the site is there, and the functions can be added in later.
+5. Create the HTML, and CSS first can help give an indication of the functions that will be needed, and to have the data model be visibily shown. 

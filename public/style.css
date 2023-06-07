@@ -35,7 +35,7 @@ h2 {
 
 h3 {
   color: #f2b989;
-  font-size: 15px;
+  font-size: 10px;
   text-align: right;
 }
 
@@ -45,6 +45,8 @@ h4 {
   font-family: "Poppins", sans-serif;
   color: #433020;
   font-weight: 200;
+  flex-grow: 1;
+  min-width: 300px;
 }
 
 h5 {
@@ -207,7 +209,7 @@ aside {
   padding: 4rem;
   min-height: 500px;
   position: absolute;
-  top: 15%;
+  top: 5%;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -263,4 +265,16 @@ aside {
 
 .rating label {
   font-size: 25px;
+}
+
+img {
+  border: 1px solid #faebe3;
+  border-radius: 30px;
+  background: #faebe3;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

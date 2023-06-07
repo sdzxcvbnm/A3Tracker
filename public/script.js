@@ -83,7 +83,6 @@ function displayCake(cake) {
 
   const btnContainer = document.createElement("div");
 
-  // Setup delete button DOM elements
   let delButton = document.createElement("button");
   let delButtonText = document.createTextNode("Delete");
   delButton.appendChild(delButtonText);
@@ -92,7 +91,6 @@ function displayCake(cake) {
   // btnContainer.appendChild(delButton);
   item.appendChild(delButton);
 
-  // Listen for when the delete button is clicked
   delButton.addEventListener("click", function (event) {
     event.stopPropagation();
     entryList.forEach(function (cakeArrayElement, cakeArrayIndex) {
@@ -101,21 +99,14 @@ function displayCake(cake) {
       }
     });
 
-    // Make sure the deletion worked by logging out the whole array
     deleteCake(item.getAttribute("data-id"));
     item.remove(); // Remove the task item from the page when button clicked
-    // Because we used 'let' to define the item, this will always delete the right element
   });
 
   item.addEventListener("click", (evt) => {
     // alert(`you've clicked ${cake.name}`);
     const overlay = document.createElement("div");
 
-    // overlay.addEventListener("click", (evt) => {
-    //     // evt.preventDefault();
-    //     // evt.target.remove(evt.target);
-    //     overlay.parentNode.removeChild(overlay);
-    // });
     overlay.classList.add("overlay");
 
     const modal = document.createElement("model");
@@ -124,7 +115,6 @@ function displayCake(cake) {
             <h2>
                 ${cake.name}
             </h2>
-            <br>
             <h3>
                 <em>
                 <b>Date:</b> ${cake.date}
@@ -132,8 +122,8 @@ function displayCake(cake) {
                 ID: ${cake.id}
                 </em>
             </h3> 
+            <img src="image folder/cake1.png" alt= cake>
             <h4>
-                <br><br>
                 <strong>Type:</strong>    ${cake.type}<br>
                 <strong>Flavour:</strong> ${cake.flavour}<br>
                 <strong>Bakery:</strong> ${cake.bakery}<br>
