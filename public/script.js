@@ -70,13 +70,12 @@ function displayCake(cake) {
     <h2>
         ${cake.name}
     </h2>
-    <br>
     <p>
-        <br><br>
         <b>Type:</b>    ${cake.type}<br>
         <b>Flavour:</b> ${cake.flavour}<br>
         <b>Bakery:</b>  ${cake.bakery}<br>
         <b>Rating:</b>  ${cake.rate}<br>
+        <em>Date: ${cake.date}</em><br>
     </p>`;
 
   entrylist.appendChild(item);
@@ -224,8 +223,8 @@ function addCake(name, type, flavour, rate, bakery, comment) {
 addCake(
   "Test Cake Entry",
   "Sponge Cake",
-  "Red Velvet",
+  "Vanilla",
   5,
-  "123 Bakery St",
-  "Nice!"
+  "18 Bakery St",
+  "Sed ut perspiciatis unde laudansi sio. Nemo enim ipsam voluptatem quia voled quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
 );
