@@ -85,6 +85,23 @@ aside {
     font-size: 15px;
     text-align: right;
   }
+
+  h4 {
+    font-size: 16px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: #433020;
+    font-weight: 200;
+  }
+
+  h5 {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #efa493;
+    font-size: 30px;
+    font-weight: 600;
+  }
   
   main {
     height: calc(100vh - 70px);
@@ -151,7 +168,6 @@ aside {
     height: 200px;
     border-radius: 24px;
 }   
-
 
 ::placeholder,
 option:disabled {
@@ -221,7 +237,6 @@ aside {
   max-width: 200px;
 }
 
-
 #entrylist li button {
   font-size: 15px;
   padding: 1em 1em 1em 1em;
@@ -237,7 +252,7 @@ aside {
   justify-content: center;
   gap: 0.4rem;
   width: 900px;
-  padding: 1.3rem;
+  padding: 4rem;
   min-height: 500px;
   position: absolute;
   top: 15%;
@@ -268,12 +283,18 @@ aside {
 .delButtonContainter {
   position: absolute;
   left: 140px;
-  top: 945px;
+  top: 1500px;
+}
+
+#ratings {
+  margin-left: 8px;
+  color: #433020;
+  font-family: 'Poppins', sans-serif;
 }
 
 .rating {
   display: inline-block;
-  margin-left: 55px;
+  margin-left: 50px;
 }
 
 .rating * {

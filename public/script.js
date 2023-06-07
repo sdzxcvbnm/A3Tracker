@@ -135,18 +135,20 @@ function displayCake(cake) {
             </h2>
             <br>
             <h3>
-                <em>ID: ${cake.id}
+                <em>
+                <b>Date:</b> ${cake.date}
                 <br>
-                <b>Date:</b> ${cake.date}</em> 
+                ID: ${cake.id}
+                </em>
             </h3> 
-            <p>
+            <h4>
                 <br><br>
-                <b>Type:</b>    ${cake.type}<br>
-                <b>Flavour:</b> ${cake.flavour}<br>
-                <b>Bakery:</b>  ${cake.bakery}<br>
-                <b>Rating:</b>  ${cake.rate}<br>
-                <b>Comment:</b> ${cake.comment}
-            </p>`;
+                <strong>Type:</strong>    ${cake.type}<br>
+                <strong>Flavour:</strong> ${cake.flavour}<br>
+                <strong>Bakery:</strong> ${cake.bakery}<br>
+                <strong>Rating:</strong> ${cake.rate}<br>
+                <strong>Comment:</strong> ${cake.comment}<br><br>
+            </h4>`;
         
         
         const delButtonContainter = document.createElement("div");
@@ -228,7 +230,7 @@ function addCake(name, type, flavour, rate, bakery, comment) {
         name,
         type,
         id: Date.now(),
-        date: new Date().toISOString(),
+        date: new Date().toISOString().slice(0, 10),
         flavour,        
         rate,
         bakery,
