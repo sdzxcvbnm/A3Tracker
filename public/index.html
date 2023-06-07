@@ -1,73 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SweetSuccess 🎂</title>
-        <link rel="stylesheet" href="style.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,300&display=swap');
-            </style>
-            
-    </head>
-    <body>
-        <header>
-            <h1>SweetSuccess ♡</h1>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SweetSuccess 🎂</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,300&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>SweetSuccess ♡</h1>
+    </header>
 
-        <main> 
-            <section> 
-
-
-                <h2>Start your journey here! 🎂</h2>
+    <main>
+      <section>
+        <h2>Start your journey here! 🎂</h2>
         <form id="cakeform">
-            <div class="form-row">
-                <label for="cakeName">Cake<br>Name</label>
-                <input
-                    placeholder="Enter Cake Name"
-                    type="text"
-                    name="cakeName"
-                    id="cakeName"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="cakeType">Type</label>
-                <select id="cakeType" name="cakeType" required="true">
-                    <option value="" disabled selected hidden>Select the type of cake</option>
-                    <option value="Sponge Cake">Sponge Cake</option>
-                    <option value="Pound Cake">Pound Cake</option>
-                    <option value="Angel Cake">Angel Cake</option>
-                    <option value="Chiffon Cake">Chiffon Cake</option>
-                    <option value="Genoise Cake">Genoise Cake</option>
-                    <option value="Swiss Roll">Swiss Roll</option>
-                    <option value="Cupcake">Cupcake</option>
-                    <option value="Cheesecake">Cheesecake</option>
-                    <option value="Carrot cake">Carrot Cake</option>
-                    <option value="Short Cake">Short Cake</option>
-                    <option value="Bundt Cake">Bindy Cake</option>
-                    <option value="Crepe Cake">Crepe Cake</option>
-                    <option value="Ice-cream Cake">Ice-cream Cake</option>
-                    <option value="Icebox Cake">Icebox Cake</option>
-                    <option value="Other">Other</option>
+          <div class="form-row">
+            <label for="cakeName">Cake<br />Name</label>
+            <input
+              placeholder="Enter Cake Name"
+              type="text"
+              name="cakeName"
+              id="cakeName"
+              required="true"
+            />
+          </div>
+          <div class="form-row">
+            <label for="cakeType">Type</label>
+            <select id="cakeType" name="cakeType" required="true">
+              <option value="" disabled selected hidden>
+                Select the type of cake
+              </option>
+              <option value="Sponge Cake">Sponge Cake</option>
+              <option value="Pound Cake">Pound Cake</option>
+              <option value="Angel Cake">Angel Cake</option>
+              <option value="Chiffon Cake">Chiffon Cake</option>
+              <option value="Genoise Cake">Genoise Cake</option>
+              <option value="Swiss Roll">Swiss Roll</option>
+              <option value="Cupcake">Cupcake</option>
+              <option value="Cheesecake">Cheesecake</option>
+              <option value="Carrot cake">Carrot Cake</option>
+              <option value="Short Cake">Short Cake</option>
+              <option value="Bundt Cake">Bindy Cake</option>
+              <option value="Crepe Cake">Crepe Cake</option>
+              <option value="Ice-cream Cake">Ice-cream Cake</option>
+              <option value="Icebox Cake">Icebox Cake</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
 
-                </select>
-            </div>
+          <div class="form-row">
+            <label for="cakeFlavour">Flavour</label>
+            <input
+              placeholder="Enter Cake Flavour"
+              type="text"
+              name="cakeFlavour"
+              id="cakeFlavour"
+              required="true"
+            />
+          </div>
 
-            <div class="form-row">
-                <label for="cakeFlavour">Flavour</label>
-                <input
-                placeholder="Enter Cake Flavour"
-                    type="text"
-                    name="cakeFlavour"
-                    id="cakeFlavour"
-                    required="true"
-                >
-            </div>
-                
-
-            <!-- <div class="form-row">
+          <!-- <div class="form-row">
                 <label for="cakeRate">Rating</label>
                 <input
                     type="number"
@@ -77,69 +74,61 @@
                 >
             </div>  -->
 
-        
+          <div id="ratings">
+            <label for="ratings">Rating </label>
+            <div class="rating">
+              <input id="rating1" type="radio" name="rating" value="1" />
+              <label for="rating1">&#9733;</label>
 
-        
-            <div id="ratings">
-                <label for="ratings">Rating </label>
-                <div class="rating">
-                        <input id="rating1" type="radio" name="rating" value="1">
-                        <label for="rating1">&#9733;</label>
-                    
-                        <input id="rating2" type="radio" name="rating" value="2">
-                        <label for="rating2">&#9733;</label>
-                    
-                        <input id="rating3" type="radio" name="rating" value="3">
-                        <label for="rating3">&#9733;</label>
-                    
-                        <input id="rating4" type="radio" name="rating" value="4">
-                        <label for="rating4">&#9733;</label>
-                    
-                        <input id="rating5" type="radio" name="rating" value="5">
-                        <label for="rating5">&#9733;</label>
-                </div>
+              <input id="rating2" type="radio" name="rating" value="2" />
+              <label for="rating2">&#9733;</label>
 
+              <input id="rating3" type="radio" name="rating" value="3" />
+              <label for="rating3">&#9733;</label>
+
+              <input id="rating4" type="radio" name="rating" value="4" />
+              <label for="rating4">&#9733;</label>
+
+              <input id="rating5" type="radio" name="rating" value="5" />
+              <label for="rating5">&#9733;</label>
             </div>
+          </div>
 
-
-            <div class="form-row">
-                <label for="cakeBakery">Bakery</label>
-                <input
-                    placeholder="Enter Cake Bakery"
-                    type="text"
-                    name="cakeBakery"
-                    id="cakeBakery"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="cakeComment">Personal Comment</label>
-                <input
-                    placeholder="Write your comments..."
-                    type="text"
-                    name="cakeComment"
-                    id="cakeComment"
-                    required="true"
-                >
-            </div>
-            <!-- <div class="form-row">
+          <div class="form-row">
+            <label for="cakeBakery">Bakery</label>
+            <input
+              placeholder="Enter Cake Bakery"
+              type="text"
+              name="cakeBakery"
+              id="cakeBakery"
+              required="true"
+            />
+          </div>
+          <div class="form-row">
+            <label for="cakeComment">Personal Comment</label>
+            <input
+              placeholder="Write your comments..."
+              type="text"
+              name="cakeComment"
+              id="cakeComment"
+              required="true"
+            />
+          </div>
+          <!-- <div class="form-row">
                 <input type="submit">
             </div> -->
 
-            <button id="addCake">Add Cake!</button>
+          <button id="addCake">Add Cake!</button>
         </form>
-        </section>
+      </section>
 
+      <aside>
+        <h2>Entries</h2>
 
-        <aside>
-         <h2>Entries</h2>
-
-         <ul id="entrylist"></ul>
-
-        </aside>
-        
+        <ul id="entrylist"></ul>
+      </aside>
     </main>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>

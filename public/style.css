@@ -1,177 +1,129 @@
-
-/* 
-h1{
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #433020;
+}
+
+header {
+  height: 70px;
+  padding: 1em 0;
+  background-image: linear-gradient(120deg, #ffb4b4 0%, #faebe3 100%);
+  color: #433020;
+  box-shadow: 5px 5px 12px #bababa;
+  width: 100vw;
 }
 
 header > h1 {
-    text-align: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #433020;
+}
+
+h2 {
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #433020;
+}
+
+h3 {
+  color: #f2b989;
+  font-size: 15px;
+  text-align: right;
+}
+
+h4 {
+  font-size: 16px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  color: #433020;
+  font-weight: 200;
+}
+
+h5 {
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #efa493;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+main {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "cakeform entrylist"; */
+}
+
+main section {
+  /*  grid-area: cakeform; */
+  display: flex;
+  min-width: 400px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
-    max-width: 500px;
-    margin: 0 auto;
-    border: 2px solid grey;
-    padding: 1em;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 10px;
+  color: #433020;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 5px 5px 8px #bababa;
 }
 
 .form-row {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.5em;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
 }
 
 .form-row > label {
-    width: 100px;
+  width: 100px;
 }
 
 .form-row > input,
 .form-row > select {
-    padding: 0.5em;
-    flex-grow: 1;
+  padding: 0.5em;
+  flex-grow: 1;
+  color: #433020;
+  border: 2px solid #faebe3;
+  border-radius: 30px;
+  background: #faebe3;
 }
 
-aside {
-    grid-area: entrylist;
-    padding: 1em;
-    overflow-y: scroll;
-  }
-  */ 
+#addCake {
+  border-radius: 30px;
+  display: block;
+  margin: 1em auto;
+  padding: 1em 2.5em 1em 2.5em;
+  background: #433020;
+  border: #433020;
+  color: #f8f8f8;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-  }
-  
-  html {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    color: #433020;
-  }
-  
-  header {
-    height: 70px;
-    padding: 1em 0;
-    background-image: linear-gradient(120deg, #FFB4B4 0%, #FAEBE3 100%);
-    color: #433020;
-    box-shadow: 5px 5px 12px #bababa;
-    width:100vw;
-  }
-  
-  header > h1 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #433020;
-  }
-  
-  h2 {
-    margin-bottom: 1em;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #433020;
-  }
-
-  h3 {
-    color: #F2B989;
-    font-size: 15px;
-    text-align: right;
-  }
-
-  h4 {
-    font-size: 16px;
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
-    color: #433020;
-    font-weight: 200;
-  }
-
-  h5 {
-    margin-bottom: 1em;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #efa493;
-    font-size: 30px;
-    font-weight: 600;
-  }
-  
-  main {
-    height: calc(100vh - 70px);
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-   /* grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "cakeform entrylist"; */
-  }
-  
-  main section {
-   /*  grid-area: cakeform; */
-    display: flex;
-    min-width: 400px;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  form {
-    margin: 0 auto;
-    padding: 1em;
-    border-radius: 10px;
-    color: #433020;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 5px 5px 8px #bababa;
-  }
-
-  .form-row {
-    display: flex;
-    justify-content: flex-end;
-    padding: .5em;
-    
-  }
-  
-  .form-row > label {
-    width: 100px;
-  }
-  
-  .form-row > input,
-  .form-row > select {
-    padding: .5em;
-    flex-grow: 1;
-    color: #433020;
-    border: 2px solid #FAEBE3;
-    border-radius: 30px;
-    background: #FAEBE3;
-  }
-  
-  #addCake {
-    border-radius: 30px;
-    display: block;
-    margin: 1em auto;
-    padding: 1em 2.5em 1em 2.5em;
-    background: #433020;
-    border: #433020;
-    color: #F8F8F8;
-  }
-  
 #cakeComment {
-    width: 400px;
-    height: 200px;
-    border-radius: 24px;
-}   
+  width: 400px;
+  height: 200px;
+  border-radius: 24px;
+}
 
 ::placeholder,
 option:disabled {
-  color: #F2B989;
+  color: #f2b989;
 }
 
 .btnContainer {
@@ -204,7 +156,7 @@ aside {
   flex-grow: 1;
 }
 
-#entryList ul{
+#entryList ul {
   display: flex;
   flex-grow: 1;
   width: 100%;
@@ -242,7 +194,7 @@ aside {
   padding: 1em 1em 1em 1em;
   background: #433020;
   border: #433020;
-  color: #F8F8F8;
+  color: #f8f8f8;
   border-radius: 30px;
 }
 
@@ -289,7 +241,7 @@ aside {
 #ratings {
   margin-left: 8px;
   color: #433020;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .rating {
@@ -301,18 +253,14 @@ aside {
   float: right;
 }
 
-.rating input{
+.rating input {
   display: none;
 }
 
-.rating input:checked ~ label{
+.rating input:checked ~ label {
   color: #f6ce7f;
 }
 
-.rating label{
+.rating label {
   font-size: 25px;
 }
-
-
-
-

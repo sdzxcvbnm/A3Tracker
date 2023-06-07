@@ -16,14 +16,15 @@ Users can delete the entry from the main page, or click on the entry, and delete
 
 # Design
 The design of this webiste features a single page architecture, with all the functionality being presented on the one page.
+
 Taking into consideration of the feedback received from assessment: Web Art Design, the location of the tracked entries are moved from the bottom of the page to the top, on the right side; so that users are able to see all their entries upon opening the page.
+
 The user input for the cake flavours are changed from a dropdown selection box, to a text field, so that suers have more freedom in the different flavours of cakes. The text size and colours have also been adjusted to make it easier to read. 
 
 # Note
 The site was created using Visual Studio Code, using Javascript, CSS, and HTML. The site was viewed on Google Chrome during coding, and done using a Macbook Air, with a 13in screen. 
+Fonts are imported from Google Fonts. The font used is Poppins.
 
-# Design Patterns + Principles + Accessibility & Usability
-*
 
 # Prototype (Process)
 1. Created the Git, the folders, and backend.
@@ -35,11 +36,18 @@ The site was created using Visual Studio Code, using Javascript, CSS, and HTML. 
 6. Star rating 
 7. Adjusting css. Fixed flex wrap for phone screens and smaller screensizes. 
 
+# Issues and Challenges
+There were some design elements that i was unable to incorporate due to lack of time, and not being able to get the code to work. 
+I ran into a few issues when coding the delete buttons, with it sometimes disappearing, or not working properly.
+I was also unable to incoporate the cake images, where a specific image would be allocated to the entry depending on the information/data.
+
+
 
 # Codes
 ## Local Storage
 using a local storage to save the data entries onto the site, for persistent access between sessions.
 
+``` Javascript
 const localStorageKey = 'DECO2017.SDAN5477.Cakes'
 let entryList = [];
 const saved = localStorage.getItem(localStorageKey);
@@ -52,6 +60,7 @@ if(parsedSaved) {
         displayCake(parsedSaved[cake]);   
     }
 }
+``` 
 
 Sites used:
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
@@ -60,8 +69,12 @@ https://www.freecodecamp.org/news/how-to-loop-through-an-array-in-javascript-js-
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 
 ## Modal 
-Creating a modal: a dialog box/popup window that is displayed. 
+Creating a modal: a dialog box/popup window that is displayed. The model is set in Javascript and CSS is used to design the modal. The information that is shown in the modal comes from cake elements that are saved.
 
+InnerHTML is used to set the html of the modal.
+<em> <h2> <p> are used to differenciate the display of the texts.
+
+```Javascript
  const modal = document.createElement("model");
         modal.classList.add('modal');
         modal.innerHTML = `
@@ -75,24 +88,31 @@ Creating a modal: a dialog box/popup window that is displayed.
                 <b>Date:</b> ${cake.date}</em> 
             </h3> 
             <p>
-                <br><br>
+                <br>
                 <b>Type:</b>    ${cake.type}<br>
                 <b>Flavour:</b> ${cake.flavour}<br>
                 <b>Bakery:</b>  ${cake.bakery}<br>
                 <b>Rating:</b>  ${cake.rate}<br>
                 <b>Comment:</b> ${cake.comment}
             </p>`;
+```
 
-Using an overlay to blur the background behind the modal.
 Sites used; 
 https://www.w3schools.com/howto/howto_css_modals.asp 
 https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/ 
 
-## Modal delete button
+## Continuation of Modal + modal delete button
 Having a delete button inside the modal. Using css to position the delete button. 
-The delButtonContainer is from the delButton,
+Created 'delButtonContainer' to be able to style the button, and make a container for it to sit inside of and give the container a css class. As having a container makes it easier to position on the page and keeps the structure of the page more clean.
 
-  const delButtonContainter = document.createElement("div");
+Added the container to the 'modal', so that it will render, anad added the modal into overlaay; so tjat the popup box will render ontop of a dark, blurred background.
+
+Assign an 'onClick' to the overlay so that the user can click on the area outside of the popup, and registered it so that when they click, the overlay component is removed and the popup modal goes away.
+
+'e.stopPropagation' is there so that overlay is still technically inside of the popup cake detail box, and to prevent the click from going through the overlay and gets registered that the modal was clicked and another overlay and popup will appear.
+
+ ``` Javascript
+ const delButtonContainter = document.createElement("div");
         const copiedDelButton = delButton.cloneNode(true);
 
         copiedDelButton.addEventListener("click", function (event) {
@@ -107,13 +127,13 @@ The delButtonContainer is from the delButton,
             console.log(entryList)
             deleteCake(item.getAttribute('data-id'));
             item.remove();
+              })
 
  const delButtonContainter = document.createElement("div");
         delButtonContainter.classList.add('delButtonContainer');
         delButtonContainter.appendChild(delButton);
-        modal.appendChild(delButtonContainter);
-
-The issues that occured when coding this is that the button would disappear from the main page, after clicking and exiting the modal.
+        modal.appendChild(delButtonContainter);      
+```
 
 Sites used:
 https://www.w3schools.com/jsref/met_node_clonenode.asp
@@ -123,6 +143,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#th
 ## Star Rating
 Creating the star rating system, so that users are able to view the star and input their rating, in which the data is collected and saved. As i ran into issues, the rating is converted into numbers (0-5) on the saved entry, and is not shown as stars. 
 
+``` Javascript
 const rating1 = document.getElementById("rating1");
 const rating2 = document.getElementById("rating2");
 const rating3 = document.getElementById("rating3");
@@ -147,11 +168,19 @@ rating4.addEventListener("click", (evt) => {
 rating5.addEventListener("click", (evt) => {
     ratingValue = 1;
 });
+```
 
 Sites used:
 https://stackoverflow.com/questions/49218516/creating-simple-star-rating-using-click-event-javascript
 https://stackoverflow.com/questions/38238398/display-stars-instead-of-radio-buttons
 
 ## Smaller screens
- Adjusting the css so that the elements will move to fit a phone screen or smaller screen sizes.
-  display: flex;
+ Adjusting css elements so that the elements will move to fit a phone screen or smaller screen sizes; by using display: flex;, margins, paddings, widths and positions.
+
+# Recommendations
+1. Implementing images: As according to the original design, a cake image would be allocated to the entry based on the cake type.
+2. A popup to confirm if the user if the user is sure about deleting the entry, before the entry is permanently deleted.
+3. The main screen stating that there are no entries, when it is the user's first time on the site, and they have yet to add any entry.
+
+4. Having a clear design is helpful. I'd recommend having the design of the page created through sites like; Figma.com, and the data model of the site is completed. Get feedback from friends, family, tutors, and the feedback from the previous assignment to make positive adjustments to the design, and if any user inputs should be changed. 
+5. Creating the HTML, and CSS first. So that everything that should be on the site is there, and the functions can be added in later.
